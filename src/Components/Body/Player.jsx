@@ -1,7 +1,8 @@
 import React from 'react'
 import { FaUser, FaFlag } from "react-icons/fa";
 
-export default function Player({player}) {
+export default function Player({player,handelChoosePlayer}) {
+  
     return (
         
             <div className="bg-white rounded-xl shadow-md  p-3">
@@ -38,7 +39,7 @@ export default function Player({player}) {
               </div>
             </div>
     
-            <button className="mt-3 w-full bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-1.5 rounded-md transition">
+            <button onClick={()=>handelChoosePlayer(player)} className="mt-3 w-full bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-1.5 rounded-md transition">
               Choose Player
             </button>
           </div>

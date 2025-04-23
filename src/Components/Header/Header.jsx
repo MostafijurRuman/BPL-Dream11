@@ -2,7 +2,7 @@ import logo from '../../assets/logo.png'
 import dolor from '../../assets/dollar.png'
 import banner from '../../assets/banner-main.png'
 
-export default function Header() {
+export default function Header({handelFreeCredit,coins,notifyCoinsAdded}) {
     return (
        <div>
          <div className="flex items-center justify-between py-6 sticky ">
@@ -16,8 +16,8 @@ export default function Header() {
                     <li>Teams</li>
                     <li>Schedules</li>
                     <li>
-                        <button className="bg-white text-black font-semibold px-5 py-2 rounded-xl border-[#1313131A] shadow flex items-center space-x-2">
-                            <span>0 Coin</span>
+                        <button  className="bg-white text-black font-semibold px-5 py-2 rounded-xl border-[#1313131A] shadow flex items-center space-x-2">
+                            <span>{coins} Coin</span>
                             <img src={dolor} alt="" className="inline-block" />
                         </button>
                     </li>
@@ -46,7 +46,7 @@ export default function Header() {
         <p className="text-sm md:text-[24px] font-medium text-[#FFFFFFB2]">
           Beyond Boundaries Beyond Limits
         </p>
-        <button className="mt-4 bg-lime-300 text-black px-5 py-2 rounded-lg font-semibold hover:bg-lime-400 transition">
+        <button onClick={()=>{handelFreeCredit();notifyCoinsAdded();}} className="mt-4 bg-lime-300 text-black px-5 py-2 rounded-lg font-semibold hover:bg-lime-400 transition">
           Claim Free Credit
         </button>
       </div>
