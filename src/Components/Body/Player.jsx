@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaUser, FaFlag } from "react-icons/fa";
 
-export default function Player({player,handelChoosePlayer}) {
+export default function Player({player,handelChoosePlayer,AlreadySelected}) {
   
     return (
         
@@ -36,7 +36,7 @@ export default function Player({player,handelChoosePlayer}) {
               </div>
               <div className="flex justify-between items-center mt-2">
                 <span className="text-[#131313] text-[16px] font-semibold">Price:${player.biddingPrice}</span>
-                <button onClick={()=>handelChoosePlayer(player)} className=" w-32 bg-gray-100 hover:bg-[#E7FE29]  text-gray-800 text-sm font-medium py-1.5 rounded-md transition">
+                <button onClick={()=>{handelChoosePlayer(player); AlreadySelected(player);}} className=" w-32 bg-gray-100 hover:bg-[#E7FE29]  text-gray-800 text-sm font-medium py-1.5 rounded-md transition">
               Choose Player
             </button>
               </div>

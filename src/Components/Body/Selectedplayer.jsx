@@ -1,7 +1,7 @@
 import { RiDeleteBin5Line } from "react-icons/ri";
 
-export default function Selectedplayer({player}) {
-    const {name,battingType,image} =player;
+export default function Selectedplayer({player,handelPlayerRemove}) {
+    const {name,battingType,image,playerId} =player;
   return (
     <div className="flex justify-between items-center p-6 rounded-3xl border border-[#1313131A] mb-6">
             <div className="flex items-center gap-6 ">
@@ -15,7 +15,7 @@ export default function Selectedplayer({player}) {
             </div>
 
             <div>
-                <button><RiDeleteBin5Line className="text-2xl text-red-400" /></button>
+                <button onClick={()=>handelPlayerRemove(playerId)}><RiDeleteBin5Line className="text-2xl text-red-400 cursor-pointer" /></button>
             </div>
     </div>
   )

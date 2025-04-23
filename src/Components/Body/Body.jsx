@@ -2,7 +2,7 @@ import Players from "./Players";
 import Selectedplayer from './Selectedplayer'
 
 
-const Body = ({handelChoosePlayer,selected,allPlayers}) => {
+const Body = ({handelChoosePlayer,selected,allPlayers, AlreadySelected,handelPlayerRemove}) => {
     const handelSelected =() =>{
         const available = document.getElementById('available');
         const selected = document.getElementById('selected');
@@ -40,7 +40,7 @@ const Body = ({handelChoosePlayer,selected,allPlayers}) => {
                             Selected ({selected.length})</button>
                     </div>
                 </div>
-                <Players handelChoosePlayer={handelChoosePlayer} allPlayers={allPlayers}></Players>
+                <Players handelChoosePlayer={handelChoosePlayer} allPlayers={allPlayers}  AlreadySelected={ AlreadySelected}></Players>
             </div>
          {/* Selected Section */}
          <div id="selected" className="hidden">
@@ -61,7 +61,7 @@ const Body = ({handelChoosePlayer,selected,allPlayers}) => {
                 </div>
                 {/* Selected Players */}
                 <div>
-                  {selected.map(player => <Selectedplayer player={player}></Selectedplayer>)}
+                  {selected.map(player => <Selectedplayer player={player} handelPlayerRemove={handelPlayerRemove}></Selectedplayer>)}
                 </div>
          </div>
 

@@ -15,13 +15,55 @@ function App() {
   const notifyCoinsAdded = () => {
     toast.success("Credit Added to your Account!");
   };
+
+  const notifyPlayerAdded = (playerName) => {
+    toast.success(`Congrats!! ${playerName} is now in your squad`);}
+
+  const notifyPlayerNotAdded = () => {
+    toast.error("Not enough money to buy this player. Claim some Credit");}
+
+  const notifyPlayerAlreadyAdded = () => {
+    toast.warn("Oops! This player is already part of your team.");}
+  
+  
   const [coins,setCoins]=useState(0);
   const handelFreeCredit = () =>{
-    setCoins(coins + 600000);
+    setCoins(coins + 6000000);
   }
   const [selected,setSelected] = useState([]);
+  const handelCoins = (biddingPrice)=>{
+    const newCoins = coins-biddingPrice;
+    setCoins(newCoins)
+  };
+ 
+  const AlreadySelected = (player)=>{
+    const isSelected = selected.find(Selectedplayer => Selectedplayer.playerId === player.playerId)
+    if(isSelected){
+      notifyPlayerAlreadyAdded()
+    }
+  }
   const handelChoosePlayer = player =>{
-    const newSelectedPlayers = [...selected,player]
+    const isSelected = selected.find(Selectedplayer => Selectedplayer.playerId === player.playerId)
+    if(coins>player.biddingPrice && !isSelected){
+      const newSelectedPlayers = [...selected,player]
+      setSelected(newSelectedPlayers)
+      const playerName=player.name;
+      const {biddingPrice} =player;
+      notifyPlayerAdded(playerName);
+      handelCoins(biddingPrice);
+      
+    }
+    else if(isSelected){
+      console.log("good job")
+    }
+
+    else{
+      notifyPlayerNotAdded()
+    }
+  }
+
+  const handelPlayerRemove =(id)=>{
+    const newSelectedPlayers = selected.filter(player => player.playerId !== id);
     setSelected(newSelectedPlayers)
   }
   
@@ -43,7 +85,9 @@ function App() {
       
       />
       
-      <Body handelChoosePlayer={handelChoosePlayer} selected={selected} allPlayers={allPlayers}></Body>
+      <Body handelChoosePlayer={handelChoosePlayer}  AlreadySelected={ AlreadySelected} selected={selected} allPlayers={allPlayers} 
+      handelPlayerRemove={handelPlayerRemove}
+      ></Body>
     
       
       </div>
