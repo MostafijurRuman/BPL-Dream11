@@ -65,8 +65,13 @@ const Body = ({handelChoosePlayer,selected,allPlayers, AlreadySelected,handelPla
                 </div>
          
                 <div>
-                <button onClick={handelAvailable} className="btn font-bold rounded-xl bg-[#E7FE29]  border-amber-300">Add More Player</button>
-            </div>
+                    {selected.length > 0 && (
+                        <button onClick={handelAvailable} className="btn font-bold rounded-xl bg-[#E7FE29] border-amber-300">
+                        Add More Player
+                        </button>
+                    )}
+                </div>
+
 
          </div>
             

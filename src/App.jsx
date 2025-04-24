@@ -7,7 +7,8 @@ import { ToastContainer, toast } from 'react-toastify';
 function App() {
   const [allPlayers,setAllPlayers] = useState([]);
   useEffect(()=>{
-      fetch('../../../public/Players.json')
+      // fetch('../../../public/Players.json')
+      fetch('https://raw.githubusercontent.com/MostafijurRuman/BPL-Dream11/refs/heads/main/public/Players.json')
       .then(res => res.json())
       .then(data => setAllPlayers(data))
   },[])
@@ -24,6 +25,12 @@ function App() {
 
   const notifyPlayerAlreadyAdded = () => {
     toast.warn("Oops! This player is already part of your team.");}
+
+    const notifyPlayerRemoved = () => {
+      toast.success("Player successfully removed from your team!");};
+
+    const notifyMaxPlayerAdded = () => {
+      toast.warn("Oops! You’ve already selected 6/6 players. Remove one to add a new player.");}
   
   
   const [coins,setCoins]=useState(0);
@@ -44,7 +51,8 @@ function App() {
   }
   const handelChoosePlayer = player =>{
     const isSelected = selected.find(Selectedplayer => Selectedplayer.playerId === player.playerId)
-    if(coins>player.biddingPrice && !isSelected){
+
+    if(coins>player.biddingPrice && !isSelected && selected.length+1 <= 6){
       const newSelectedPlayers = [...selected,player]
       setSelected(newSelectedPlayers)
       const playerName=player.name;
@@ -56,6 +64,8 @@ function App() {
     else if(isSelected){
       console.log("good job")
     }
+    else if(selected.length+1 >= 6){
+      notifyMaxPlayerAdded()}
 
     else{
       notifyPlayerNotAdded()
@@ -65,6 +75,7 @@ function App() {
   const handelPlayerRemove =(id)=>{
     const newSelectedPlayers = selected.filter(player => player.playerId !== id);
     setSelected(newSelectedPlayers)
+    notifyPlayerRemoved()
   }
   
   return (

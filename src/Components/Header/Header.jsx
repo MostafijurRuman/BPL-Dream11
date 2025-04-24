@@ -5,16 +5,16 @@ import banner from '../../assets/banner-main.png'
 export default function Header({handelFreeCredit,coins,notifyCoinsAdded}) {
     return (
        <div>
-         <div className="flex items-center justify-between py-6 sticky ">
+         <div className="flex items-center justify-between py-6 ">
             <div>
                 <img src={logo} alt="Logo" className="h-10" />
             </div>
-            <div>
-                <ul className="flex space-x-6 items-center font-normal text-[16px]">
-                    <li>Home</li>
-                    <li>Fixture</li>
-                    <li>Teams</li>
-                    <li>Schedules</li>
+            <div >
+                <ul className="flex space-x-6 items-center font-normal text-[16px] ">
+                    <li className='hidden md:inline'>Home</li>
+                    <li className='hidden md:inline'>Fixture</li>
+                    <li className='hidden md:inline'>Teams</li>
+                    <li className='hidden md:inline'>Schedules</li>
                     <li>
                         <button  className="bg-white text-black font-semibold px-5 py-2 rounded-xl border-[#1313131A] shadow flex items-center space-x-2">
                             <span>{coins} Coin</span>
