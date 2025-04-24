@@ -64,8 +64,11 @@ function App() {
     else if(isSelected){
       console.log("good job")
     }
-    else if(selected.length+1 >= 6){
-      notifyMaxPlayerAdded()}
+    
+    else if(selected.length >= 6){
+      notifyMaxPlayerAdded()
+      
+    }
 
     else{
       notifyPlayerNotAdded()

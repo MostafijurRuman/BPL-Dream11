@@ -1,12 +1,39 @@
-# React + Vite
+# BPL Dream11  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=MostafijurRuman.BPL-Dream11)  
 
-Currently, two official plugins are available:
+## 🚀 About the Project  
+**BPL Dream11** is a fantasy cricket platform inspired by the Bangladesh Premier League (BPL). It allows users to create their dream cricket teams, compete with others, and experience the thrill of fantasy sports.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Live Demo  
+[![Live Site](https://img.shields.io/badge/Live%20View-Click%20Here-brightgreen)](http://bpls-dream11.surge.sh)  
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used  
+- **Frontend**: HTML, CSS, JavaScript, React  
+- **UI Libraries**: React Icons, React-Toastify, Tailwind CSS, DaisyUI  
+- **Fonts**: Google Fonts  
+- **Hosting**: Surge  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Key Features  
+1. **Team Creation**: Build your dream team with real-time player stats.  
+2. **Player Management**: Add, remove, and update selected players in your team.  
+3. **Responsive Design**: Optimized for all devices.  
+
+## 📂 Repository  
+[GitHub Repository](https://github.com/MostafijurRuman/BPL-Dream11)  
+
+## 👤 About Me  
+- **Name**: Mostafijur Ruman  
+- **Email**: [Mostafijurruman7@gmail.com](mailto:Mostafijurruman7@gmail.com)  
+- **GitHub**: [MostafijurRuman](https://github.com/MostafijurRuman)  
+- **LinkedIn**: [Mostafijur Ruman](https://www.linkedin.com/in/mostafijurruman/)  
+- **Google Knowledge Panel**: [Mostafijur Ruman](https://g.co/kgs/ShiXTwW)  
+
+## 📈 Visitor Count  
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=MostafijurRuman.BPL-Dream11)  
+
+## 📝 License  
+This project is licensed under the MIT License.  
+
+---  
+Feel free to contribute to this project by submitting issues or pull requests!  

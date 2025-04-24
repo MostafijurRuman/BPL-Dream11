@@ -68,7 +68,7 @@ export default function Footer() {
         </div>
         {/* Bottom Copyright */}
         <div className="text-center text-gray-500 text-sm mt-12">
-          ©2024 Ruman All Rights Reserved.
+          ©2025 Ruman All Rights Reserved.
         </div>
       </footer>
     </div>
