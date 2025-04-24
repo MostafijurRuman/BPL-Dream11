@@ -9,7 +9,7 @@ export default function Player({player,handelChoosePlayer,AlreadySelected}) {
           <img
             src={player.image}
             alt={player.name}
-            className="w-[356px] h-[250px]  rounded-md object-cover"
+            className="w-[481px] h-[250px]  rounded-md object-cover"
           />
     
           <div className="mt-3">
